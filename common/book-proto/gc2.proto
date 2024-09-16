@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "/proto";
+
+// Define the message structure for the Book
+message Book {
+  string id = 1;                  // Unique ID for the book
+  string title = 2;               // Title of the book
+  string author = 3;              // Author of the book
+  string published_date = 4;      // Published date in string format
+  string status = 5;              // Status of the book (Available, Borrowed)
+  string user_id = 6;             // ID of the user who borrowed the book (if any)
+}
+
+// Request for listing all books
+message ListBooksRequest {}
+
+// Response for listing all books
+message ListBooksResponse {
+  repeated Book books = 1;        // List of books
+}
+
+// Request for creating a new book
+message CreateBookRequest {
+  Book book = 1;                  // The book to be created
+}
+
+// Response for creating a new book
+message CreateBookResponse {
+  Book book = 1;                  // The created book
+}
+
+// Request for getting a book by ID
+message GetBookRequest {
+  string id = 1;                  // ID of the book to retrieve
+}
+
+// Response for getting a book by ID
+message GetBookResponse {
+  Book book = 1;                  // The book retrieved
+}
+
+// Request for updating an existing book
+message UpdateBookRequest {
+  Book book = 1;                  // The book with updated information
+}
+
+// Response for updating an existing book
+message UpdateBookResponse {
+  Book book = 1;                  // The updated book
+}
+
+// Request for deleting a book
+message DeleteBookRequest {
+  string id = 1;                  // ID of the book to delete
+}
+
+// Response for deleting a book
+message DeleteBookResponse {}
+
+// Define the BookService gRPC service
+service BookService {
+  // Method to list all books
+  rpc ListBooks (ListBooksRequest) returns (ListBooksResponse);
+
+  // Method to create a new book
+  rpc CreateBook (CreateBookRequest) returns (CreateBookResponse);
+
+  // Method to get a book by ID
+  rpc GetBook (GetBookRequest) returns (GetBookResponse);
+
+  // Method to update a book
+  rpc UpdateBook (UpdateBookRequest) returns (UpdateBookResponse);
+
+  // Method to delete a book
+  rpc DeleteBook (DeleteBookRequest) returns (DeleteBookResponse);
+}
