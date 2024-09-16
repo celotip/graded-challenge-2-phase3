@@ -4,7 +4,7 @@
 // - protoc             v5.28.1
 // source: book.proto
 
-package graded_challenge_2_phase3
+package proto
 
 import (
 	context "context"

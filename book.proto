@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto;
 
-option go_package = "github.com/celotip/graded-challenge-2-phase3/";
+option go_package = "proto/";
 
 // Define the message structure for the Book
 message Book {
