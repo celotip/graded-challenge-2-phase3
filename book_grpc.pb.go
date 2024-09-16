@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v5.28.1
-// source: proto/gc2.proto
+// source: book.proto
 
-package proto
+package graded_challenge_2_phase3
 
 import (
 	context "context"
@@ -255,5 +255,5 @@ var BookService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/gc2.proto",
+	Metadata: "book.proto",
 }

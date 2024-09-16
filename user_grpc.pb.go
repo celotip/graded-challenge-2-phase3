@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v5.28.1
-// source: user-service/proto/user.proto
+// source: user.proto
 
-package proto
+package graded_challenge_2_phase3
 
 import (
 	context "context"
@@ -137,5 +137,5 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "user-service/proto/user.proto",
+	Metadata: "user.proto",
 }
